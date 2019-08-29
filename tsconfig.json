@@ -17,7 +17,15 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "ang-music-player": [
+        "dist/ang-music-player"
+      ],
+      "ang-music-player/*": [
+        "dist/ang-music-player/*"
+      ]
+    }
   },
   "angularCompilerOptions": {
     "fullTemplateTypeCheck": true,

@@ -1,0 +1,31 @@
+<audio controls #audioPlayer [src]="selectedAudio?.url"> </audio>
+
+<div class="wrapper" [ngStyle]="{ 'background-color': backgroundColor , 'width': width, 'height': height }">
+  <div class="container">
+    <div class="details">
+      <div class="slidecontainer">
+        <input type="range" min="1" max="{{totalAudioLength}}" value="{{currentAudioTime}}" (change)="seekAudio($event)" class="slider" id="myRange">
+        <div class="time-line">
+            <div>{{ currentAudioTime | timeConversion}}</div>
+            <div>{{ totalAudioLength | timeConversion}}</div>
+         </div>
+      </div>
+      <marquee *ngIf="scrollTitle">
+        <p class="title"> {{selectedAudio?.title}}</p>
+      </marquee>
+      <p class="title" *ngIf="!scrollTitle"> {{selectedAudio?.title}}</p>
+    </div>
+    <div class="controls">
+      <div class="repeat" *ngIf="repeat" (click)="repeatAudio(isRepeat)"></div>
+      <div class="previous" *ngIf="previous" (click)="previousAudio()"></div>
+      <div class="play" (click)="play()" *ngIf="!isAudioPlaying"></div>
+      <div class="pause" (click)="pause()" *ngIf="isAudioPlaying"></div>
+      <div class="next" *ngIf="next" (click)="nextAudio()"></div>
+      <div class="shuffle" *ngIf="shuffle"></div>
+      <div class="volume-high"></div>
+    </div>
+  </div>
+</div>
+
+<!-- isAudioLoaded -->
+<!-- add loader -->

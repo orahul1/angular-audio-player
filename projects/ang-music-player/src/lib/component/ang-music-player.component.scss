@@ -1,0 +1,113 @@
+@import url("https://fonts.googleapis.com/css?family=Raleway&display=swap");
+
+@mixin icon {
+  width: 25px;
+  height: 25px;
+  margin: 0 20px;
+  cursor: pointer;
+}
+
+.wrapper {
+  font-family: 'Raleway', sans-serif;
+  border-radius: 15px;
+  .container {
+    color: #ffffff;
+    padding: 5px;
+    .details {
+      text-align: center;
+      padding-top: 10px;
+    }
+
+    .controls {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 13px;
+
+      svg {
+        width: 25px;
+        height: 25px;
+        margin: 0 20px;
+        cursor: pointer;
+      }
+
+      .shuffle {
+        background: url(../../assests/shuffle.svg) 0px 25px;
+        @include icon;
+      }
+
+      .previous {
+        background: url(../../assests/previous.svg) 0px 25px;
+        @include icon;
+      }
+
+      .play {
+        background: url(../../assests/play.svg) 0px 25px;
+        @include icon;
+      }
+
+      .pause {
+        background: url(../../assests/pause.svg) 0px 25px;
+        @include icon;
+      }
+
+      .next {
+        background: url(../../assests/next.svg) 0px 25px;
+        @include icon;
+      }
+
+      .repeat {
+        background: url(../../assests/repeat.svg) 0px 25px;
+        @include icon;
+      }
+
+      .volume-high {
+        background: url(../../assests/volume-high.svg) 0px 25px;
+        @include icon;
+      }
+    }
+  }
+}
+
+.slidecontainer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .time-line {
+    display: flex;
+    justify-content: space-between;
+    width: 70%;
+    margin: 7px 0 7px 0;
+  }
+}
+
+.slider {
+  -webkit-appearance: none;
+  width: 70%;
+  height: 2px;
+  border-radius: 5px;
+  background: #ffffff;
+  outline: none;
+  opacity: 1;
+  transition: opacity 0.2s;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: rgb(76, 130, 175);
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: rgb(76, 130, 175);
+  cursor: pointer;
+}
