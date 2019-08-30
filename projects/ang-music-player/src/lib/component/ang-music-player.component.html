@@ -1,31 +1,37 @@
 <audio controls #audioPlayer [src]="selectedAudio?.url"> </audio>
 
 <div class="wrapper" [ngStyle]="{ 'background-color': backgroundColor , 'width': width, 'height': height }">
-  <div class="container">
+  <div class="loader" *ngIf="!isAudioLoaded"> Loading....</div>
+  <div class="error" *ngIf="isError">No audio Found !</div>
+  <div class="container" *ngIf="isAudioLoaded">
     <div class="details">
       <div class="slidecontainer">
-        <input type="range" min="1" max="{{totalAudioLength}}" value="{{currentAudioTime}}" (change)="seekAudio($event)" class="slider" id="myRange">
-        <div class="time-line">
-            <div>{{ currentAudioTime | timeConversion}}</div>
-            <div>{{ totalAudioLength | timeConversion}}</div>
-         </div>
+        <input type="range" max="{{totalAudioLength}}" value="{{currentAudioTime}}"
+          [ngStyle]="{ 'background': timeSliderColor }" (input)="seekAudio($event)" class="slider" id="myRange">
+        <div class="time-line" [ngStyle]="{ 'color' : audioTimeColor }">
+          <div>{{ currentAudioTime | timeConversion}}</div>
+          <div>{{ totalAudioLength | timeConversion}}</div>
+        </div>
       </div>
-      <marquee *ngIf="scrollTitle">
+      <marquee *ngIf="scrollTitle" [ngStyle]="{ 'color' : audioTitleColor }">
         <p class="title"> {{selectedAudio?.title}}</p>
       </marquee>
-      <p class="title" *ngIf="!scrollTitle"> {{selectedAudio?.title}}</p>
+      <p class="title" [ngStyle]="{ 'color' : audioTitleColor }" *ngIf="!scrollTitle"> {{selectedAudio?.title}}</p>
     </div>
     <div class="controls">
-      <div class="repeat" *ngIf="repeat" (click)="repeatAudio(isRepeat)"></div>
+      <div class="repeat" [ngClass]="{ 'repeat-active' : repeatActive }" *ngIf="repeat" (click)="repeatAudio(isRepeat)">
+      </div>
       <div class="previous" *ngIf="previous" (click)="previousAudio()"></div>
       <div class="play" (click)="play()" *ngIf="!isAudioPlaying"></div>
       <div class="pause" (click)="pause()" *ngIf="isAudioPlaying"></div>
       <div class="next" *ngIf="next" (click)="nextAudio()"></div>
       <div class="shuffle" *ngIf="shuffle"></div>
-      <div class="volume-high"></div>
+      <div [ngClass]="{ 'volume-high': !isMute , 'mute': isMute }" (click)="muteAudio()">
+        <div class="volume-control">
+          <input type="range" max="100" value="{{audioVolume}}" (click)="$event.stopPropagation();" (input)="volumeChange($event)"
+            [ngStyle]="{ 'background': volumeSliderColor }" class="slider" id="volumeRange">
+        </div>
+      </div>
     </div>
   </div>
 </div>
-
-<!-- isAudioLoaded -->
-<!-- add loader -->

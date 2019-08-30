@@ -1,4 +1,5 @@
 import { ElementRef, ViewChild } from '@angular/core'
+import { Subject } from 'rxjs';
 
 
 
@@ -8,6 +9,9 @@ export class AudioPlyerOptions {
   isAudioLoaded: boolean = false;
   isAudioPlaying: boolean;
   isRepeat: boolean = false;
+  audioVolume = 100;
+  isAudioEnded = new Subject;
+  isMute = false;
 
   //Access audio player dom
   @ViewChild('audioPlayer', { static: true }) audioPlayer: ElementRef;
@@ -19,22 +23,30 @@ export class AudioPlyerOptions {
     this.audioPlayer.nativeElement.addEventListener('playing', () => {
     });
 
-       //emit when intial loading of audio
+    //emit when intial loading of audio
     this.audioPlayer.nativeElement.addEventListener('loadeddata', () => {
       this.isAudioLoaded = true;
       this.getAudioLength();
     });
 
-       //emit time on playing audio
+    //emit time on playing audio
     this.audioPlayer.nativeElement.addEventListener('timeupdate', () => {
       //get current audio time
       this.currentAudioTime = Math.floor(this.audioPlayer.nativeElement.currentTime);
-      //pausing audio when audio finish + check repeat is not true if true enable repeat.
-      if (this.currentAudioTime == this.totalAudioLength && this.isRepeat == false) {
-        this.audioPlayer.nativeElement.load();
-        this.isAudioPlaying = false;
+      //check if audio is ended for next song and pass data to component
+      if (this.audioPlayer.nativeElement.ended) {
+        this.isAudioEnded.next(true);
       }
     });
+
+    this.audioPlayer.nativeElement.addEventListener('volumechange', () => {
+      this.audioVolume = Math.floor(this.audioPlayer.nativeElement.volume * 100);
+      if (this.audioVolume == 0) {
+        this.isMute = true;
+      } else {
+        this.isMute = false;
+      }
+    })
   }
 
 
@@ -42,7 +54,9 @@ export class AudioPlyerOptions {
     //toggle play-pause button
     this.isAudioPlaying = true;
     //play when user click play button
-    this.audioPlayer.nativeElement.play();
+    setTimeout(() => {
+      this.audioPlayer.nativeElement.play();
+     }, 0);
   }
 
   pause() {
@@ -55,5 +69,6 @@ export class AudioPlyerOptions {
   getAudioLength() {
     this.totalAudioLength = Math.floor(this.audioPlayer.nativeElement.duration);
   }
+
 
 }

@@ -8,13 +8,13 @@ import { Component } from '@angular/core';
 export class AppComponent {
   audioList = [{
     url: 'https://file-examples.com/wp-content/uploads/2017/11/file_example_MP3_5MG.mp3',
-    title: 'Thunder - Imagine Dragons',
+    title: 'Thunder - Imagine Dragons'
   }, {
     url: 'https://sample-videos.com/audio/mp3/crowd-cheering.mp3',
     title: 'Kids - One Republic'
   },
   {
-    url: 'https://sample-videos.com/audio/mp3/crowd-cheering.mp3',
+    url: 'https://www2.cs.uic.edu/~i101/SoundFiles/StarWars60.wav',
     title: 'Star ship - Niki Minaj'
   }]
 }

@@ -10,9 +10,24 @@
 .wrapper {
   font-family: 'Raleway', sans-serif;
   border-radius: 15px;
+
+  .loader{
+    text-align: center;
+    color: #ffff;
+    margin: 0 auto;
+    top: 50px;
+    position: relative;
+  }
+  .error{
+    text-align: center;
+    color: rgb(255, 55, 55);
+    margin: 0 auto;
+    top: 50px;
+    position: relative;
+  }
   .container {
-    color: #ffffff;
     padding: 5px;
+
     .details {
       text-align: center;
       padding-top: 10px;
@@ -30,6 +45,7 @@
         margin: 0 20px;
         cursor: pointer;
       }
+      
 
       .shuffle {
         background: url(../../assests/shuffle.svg) 0px 25px;
@@ -61,10 +77,51 @@
         @include icon;
       }
 
-      .volume-high {
-        background: url(../../assests/volume-high.svg) 0px 25px;
+      .repeat-active {
+        background: url(../../assests/repeat-active.svg) 0px 25px !important;
         @include icon;
       }
+
+      .mute{
+        background: url(../../assests/mute.svg) 0px 25px !important;
+        position: relative;
+        @include icon;
+        &:hover { 
+          .volume-control{
+           display: block;
+        } 
+       } 
+      }
+
+      .volume-low{
+        background: url(../../assests/volume-low.svg) 0px 25px !important;
+        position: relative;
+        @include icon;
+        &:hover { 
+          .volume-control{
+           display: block;
+        } 
+       } 
+      }
+
+      .volume-high {
+        background: url(../../assests/volume-high.svg) 0px 25px;
+        position: relative;
+        @include icon;
+        &:hover { 
+          .volume-control{
+           display: block;
+        } 
+       } 
+      }      
+    }
+    .volume-control {
+      width: 130px;
+      position: absolute;
+      display: none;
+      left: 26px;
+      top: -2px;
+      height: 28px;
     }
   }
 }
@@ -80,6 +137,7 @@
     justify-content: space-between;
     width: 70%;
     margin: 7px 0 7px 0;
+    color: rgb(76, 130, 175);
   }
 }
 
@@ -92,6 +150,7 @@
   outline: none;
   opacity: 1;
   transition: opacity 0.2s;
+  z-index: 1000;
 }
 
 .slider::-webkit-slider-thumb {
