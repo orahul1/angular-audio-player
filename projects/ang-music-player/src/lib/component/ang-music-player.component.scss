@@ -1,5 +1,9 @@
 @import url("https://fonts.googleapis.com/css?family=Raleway&display=swap");
 
+
+audio{
+  display: none;
+}
 @mixin icon {
   width: 25px;
   height: 25px;
@@ -10,118 +14,77 @@
 .wrapper {
   font-family: 'Raleway', sans-serif;
   border-radius: 15px;
+  display: flex;
+  align-items: center;
+  width:500px;
+  height:130px;
+  background: #000000;
+
+  .cover{
+    img{
+    max-width: 100px;
+    max-height: 100px;
+    margin-left: 10px;
+    border-radius: 50%;
+    }
+  }
 
   .loader{
     text-align: center;
     color: #ffff;
     margin: 0 auto;
-    top: 50px;
     position: relative;
   }
   .error{
     text-align: center;
     color: rgb(255, 55, 55);
     margin: 0 auto;
-    top: 50px;
     position: relative;
   }
   .container {
     padding: 5px;
-
+    width: 100%;
     .details {
       text-align: center;
-      padding-top: 10px;
+      .title{
+        color: rgb(76, 130, 175);
+        margin: 7px 0 15px 0px;
+      }
     }
 
     .controls {
       display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-top: 13px;
+      justify-content: space-around;
+      margin-top: 8px;
+      flex-basis: auto;
+      flex-direction: row;
+      flex-wrap: wrap;
 
       svg {
         width: 25px;
         height: 25px;
         margin: 0 20px;
         cursor: pointer;
-      }
-      
-
-      .shuffle {
-        background: url(../../assests/shuffle.svg) 0px 25px;
-        @include icon;
-      }
-
-      .previous {
-        background: url(../../assests/previous.svg) 0px 25px;
-        @include icon;
-      }
-
-      .play {
-        background: url(../../assests/play.svg) 0px 25px;
-        @include icon;
-      }
-
-      .pause {
-        background: url(../../assests/pause.svg) 0px 25px;
-        @include icon;
-      }
-
-      .next {
-        background: url(../../assests/next.svg) 0px 25px;
-        @include icon;
-      }
-
-      .repeat {
-        background: url(../../assests/repeat.svg) 0px 25px;
-        @include icon;
-      }
-
-      .repeat-active {
-        background: url(../../assests/repeat-active.svg) 0px 25px !important;
-        @include icon;
-      }
-
-      .mute{
-        background: url(../../assests/mute.svg) 0px 25px !important;
-        position: relative;
-        @include icon;
-        &:hover { 
-          .volume-control{
-           display: block;
-        } 
-       } 
-      }
-
-      .volume-low{
-        background: url(../../assests/volume-low.svg) 0px 25px !important;
-        position: relative;
-        @include icon;
-        &:hover { 
-          .volume-control{
-           display: block;
-        } 
-       } 
-      }
-
-      .volume-high {
-        background: url(../../assests/volume-high.svg) 0px 25px;
-        position: relative;
-        @include icon;
-        &:hover { 
-          .volume-control{
-           display: block;
-        } 
-       } 
-      }      
+      }   
     }
-    .volume-control {
-      width: 130px;
-      position: absolute;
-      display: none;
-      left: 26px;
-      top: -2px;
-      height: 28px;
+
+    .volume-container{
+      position: relative;
+      .volume-control {
+        width: 90px;
+        position: absolute;
+        left: -9px;
+        top: -62px;
+        height: 32px;
+        display: none;
+        transform: rotate(270deg);
+        z-index: 1000;
+      }
+      &:hover  {
+        .volume-control{
+         display: block;
+     } 
+    }
     }
   }
 }
@@ -135,15 +98,15 @@
   .time-line {
     display: flex;
     justify-content: space-between;
-    width: 70%;
-    margin: 7px 0 7px 0;
+    width: 87%;
+    margin: 7px 0 2px 0;
     color: rgb(76, 130, 175);
   }
 }
 
 .slider {
   -webkit-appearance: none;
-  width: 70%;
+  width: 87%;
   height: 2px;
   border-radius: 5px;
   background: #ffffff;
@@ -170,3 +133,5 @@
   background: rgb(76, 130, 175);
   cursor: pointer;
 }
+
+

@@ -1,4 +1,4 @@
-import { ElementRef, ViewChild } from '@angular/core'
+import { ElementRef, ViewChild, EventEmitter, Output } from '@angular/core'
 import { Subject } from 'rxjs';
 
 
@@ -12,6 +12,9 @@ export class AudioPlyerOptions {
   audioVolume = 100;
   isAudioEnded = new Subject;
   isMute = false;
+  @Output() playEvent = new EventEmitter();
+  @Output() pauseEvent = new EventEmitter();
+ 
 
   //Access audio player dom
   @ViewChild('audioPlayer', { static: true }) audioPlayer: ElementRef;
@@ -56,6 +59,7 @@ export class AudioPlyerOptions {
     //play when user click play button
     setTimeout(() => {
       this.audioPlayer.nativeElement.play();
+      this.playEvent.emit();
      }, 0);
   }
 
@@ -63,12 +67,13 @@ export class AudioPlyerOptions {
     //toggle play-pause button
     this.isAudioPlaying = false;
     //pause when user click pause button
-    this.audioPlayer.nativeElement.pause();
+    setTimeout(() => {
+      this.audioPlayer.nativeElement.pause();
+      this.pauseEvent.emit();
+     }, 0);
   }
 
   getAudioLength() {
     this.totalAudioLength = Math.floor(this.audioPlayer.nativeElement.duration);
   }
-
-
 }
