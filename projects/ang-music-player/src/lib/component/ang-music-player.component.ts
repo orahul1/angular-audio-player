@@ -4,8 +4,8 @@ import { AudioPlyerOptions } from '../audioPlayer';
 @Component({
   selector: 'ang-music-player',
   templateUrl: './ang-music-player.component.html',
-  styleUrls: ['./ang-music-player.component.scss'],
-  inputs: ['width', 'height', 'backgroundColor', 'audioTimeColor', 'audioTitleColor', 'volumeSliderColor', 'timeSliderColor', 'volumeControlSliderHandleColor']
+  styleUrls: ['./ang-music-player.component.scss'], 
+  inputs: ['width', 'height', 'backgroundColor', 'audioTimeColor', 'audioTitleColor', 'volumeSliderColor', 'timeSliderColor']
 })
 export class AngMusicPlayerComponent extends AudioPlyerOptions implements OnInit {
   @Input() audioList = [];
