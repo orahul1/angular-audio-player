@@ -4,10 +4,16 @@ import { AudioPlyerOptions } from '../audioPlayer';
 @Component({
   selector: 'ang-music-player',
   templateUrl: './ang-music-player.component.html',
-  styleUrls: ['./ang-music-player.component.scss'], 
-  inputs: ['width', 'height', 'backgroundColor', 'audioTimeColor', 'audioTitleColor', 'volumeSliderColor', 'timeSliderColor']
+  styleUrls: ['./ang-music-player.component.scss']
 })
 export class AngMusicPlayerComponent extends AudioPlyerOptions implements OnInit {
+  @Input() width; 
+  @Input() height; 
+  @Input() backgroundColor; 
+  @Input() audioTimeColor;
+  @Input() audioTitleColor; 
+  @Input() volumeSliderColor; 
+  @Input() timeSliderColor;
   @Input() audioList = [];
   @Input() next = true;
   @Input() previous = true;
