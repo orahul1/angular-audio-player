@@ -1,0 +1,7 @@
+{
+  "$schema": "../../node_modules/ng-packagr/ng-package.schema.json",
+  "dest": "../../dist/ang-music-player",
+  "lib": {
+    "entryFile": "src/public-api.ts"
+  }
+}

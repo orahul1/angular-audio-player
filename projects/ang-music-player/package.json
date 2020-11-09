@@ -1,0 +1,30 @@
+{
+  "name": "ang-music-player",
+  "version": "0.0.4",
+  "peerDependencies": {
+    "@angular/common": "^10.0.14",
+    "@angular/core": "^10.0.14"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/orahul1/angular-audio-player.git"
+  },
+  "keywords": [
+    "angular",
+    "angular 2",
+    "angular audio",
+    "angular audio player",
+    "angular mp3 player"
+  ],
+  "author": "Rahul Raveendran",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/orahul1/angular-audio-player/issues"
+  },
+  "homepage": "https://github.com/orahul1/angular-audio-player",
+  "description": "Angular Music/Audio Player component for web applications. Easy and HIGHLY customisable.",
+  "main": "karma.conf.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}

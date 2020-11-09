@@ -12,6 +12,12 @@
     },
     {
       "path": "./tsconfig.spec.json"
+    },
+    {
+      "path": "./projects/ang-music-player/tsconfig.lib.json"
+    },
+    {
+      "path": "./projects/ang-music-player/tsconfig.spec.json"
     }
 ]
 }
