@@ -1,6 +1,7 @@
 {
   "extends": "tslint:recommended",
   "rules": {
+<<<<<<< HEAD
     "align": {
       "options": [
         "parameters",
@@ -10,6 +11,10 @@
     "array-type": false,
     "arrow-return-shorthand": true,
     "curly": true,
+=======
+    "array-type": false,
+    "arrow-parens": false,
+>>>>>>> c382d0de1eef23a193823b9f5b60daffae1f8c8a
     "deprecation": {
       "severity": "warning"
     },
@@ -28,22 +33,33 @@
       "app",
       "kebab-case"
     ],
+<<<<<<< HEAD
     "eofline": true,
+=======
+>>>>>>> c382d0de1eef23a193823b9f5b60daffae1f8c8a
     "import-blacklist": [
       true,
       "rxjs/Rx"
     ],
+<<<<<<< HEAD
     "import-spacing": true,
     "indent": {
       "options": [
         "spaces"
       ]
     },
+=======
+    "interface-name": false,
+>>>>>>> c382d0de1eef23a193823b9f5b60daffae1f8c8a
     "max-classes-per-file": false,
     "max-line-length": [
       true,
       140
     ],
+<<<<<<< HEAD
+=======
+    "member-access": false,
+>>>>>>> c382d0de1eef23a193823b9f5b60daffae1f8c8a
     "member-ordering": [
       true,
       {
@@ -55,6 +71,10 @@
         ]
       }
     ],
+<<<<<<< HEAD
+=======
+    "no-consecutive-blank-lines": false,
+>>>>>>> c382d0de1eef23a193823b9f5b60daffae1f8c8a
     "no-console": [
       true,
       "debug",
@@ -71,15 +91,25 @@
     "no-non-null-assertion": true,
     "no-redundant-jsdoc": true,
     "no-switch-case-fall-through": true,
+<<<<<<< HEAD
+=======
+    "no-use-before-declare": true,
+>>>>>>> c382d0de1eef23a193823b9f5b60daffae1f8c8a
     "no-var-requires": false,
     "object-literal-key-quotes": [
       true,
       "as-needed"
     ],
+<<<<<<< HEAD
+=======
+    "object-literal-sort-keys": false,
+    "ordered-imports": false,
+>>>>>>> c382d0de1eef23a193823b9f5b60daffae1f8c8a
     "quotemark": [
       true,
       "single"
     ],
+<<<<<<< HEAD
     "semicolon": {
       "options": [
         "always"
@@ -133,6 +163,9 @@
         "check-typecast"
       ]
     },
+=======
+    "trailing-comma": false,
+>>>>>>> c382d0de1eef23a193823b9f5b60daffae1f8c8a
     "no-conflicting-lifecycle": true,
     "no-host-metadata-property": true,
     "no-input-rename": true,

@@ -23,6 +23,5 @@ export class AppComponent {
 
   play(){
     console.log('play');
-
   }
 }

@@ -1,7 +1,14 @@
+<<<<<<< HEAD
 # Angular Music / Audio Player
 
 Angular Music/Audio Player component for web applications. Easy and HIGHLY customisable.
 [Stackblitz example](https://stackblitz.com/edit/angular-audio-player-demo?file=src/app/app.component.ts)
+=======
+
+# Angular Music / Audio Player
+
+Angular Music/Audio Player component for web applications. Easy and HIGHLY customisable.
+>>>>>>> c382d0de1eef23a193823b9f5b60daffae1f8c8a
 
 ![alt text](https://i.ibb.co/Y7c9HZR/music.jpg)
 
@@ -52,6 +59,7 @@ Add the following component tag in you template (no properties)
 audioList is an array of objects
 
 ```
+<<<<<<< HEAD
   audioList = [
     {
       url: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3",
@@ -69,6 +77,22 @@ audioList is an array of objects
       cover: "https://i1.sndcdn.com/artworks-000249294066-uow7s0-t500x500.jpg"
     }
   ];
+=======
+  audioList = [{
+    url: 'https://sample-videos.com/audio/mp3/crowd-cheering.mp3',
+    title: 'Sample Audio 1',
+    cover: 'https://i1.sndcdn.com/artworks-000249294066-uow7s0-t500x500.jpg'
+  }, {
+    url: 'https://sample-videos.com/audio/mp3/crowd-cheering.mp3',
+    title: 'Sample Audio 2',
+    cover: 'https://i1.sndcdn.com/artworks-000249294066-uow7s0-t500x500.jpg'
+  },
+  {
+    url: 'https://www2.cs.uic.edu/~i101/SoundFiles/StarWars60.wav',
+    title: 'Sample Audio 3',
+    cover: 'https://i1.sndcdn.com/artworks-000249294066-uow7s0-t500x500.jpg'
+  }]
+>>>>>>> c382d0de1eef23a193823b9f5b60daffae1f8c8a
 ```
 
 ## Properties
@@ -99,6 +123,7 @@ The following list of properties are supported by the component.
 | repeatEvent | Event | Repeat button click event | |
 | seekEvent | Event | Seek Audio event |  |
 
+<<<<<<< HEAD
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.2.0.
 
@@ -130,8 +155,14 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 ### Shuffle option
 ### audio list option
 
+=======
+>>>>>>> c382d0de1eef23a193823b9f5b60daffae1f8c8a
   
 
 ## License
 
+<<<<<<< HEAD
 MIT License.
+=======
+MIT License.
+>>>>>>> c382d0de1eef23a193823b9f5b60daffae1f8c8a

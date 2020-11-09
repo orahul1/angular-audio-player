@@ -17,7 +17,6 @@ export class AudioPlyerOptions {
   @Output() playEvent = new EventEmitter();
   @Output() pauseEvent = new EventEmitter();
 
-
   //Access audio player dom
   @ViewChild('audioPlayer', { static: true }) audioPlayer: ElementRef;
 
