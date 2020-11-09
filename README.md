@@ -1,10 +1,7 @@
 # Angular Music / Audio Player
 
 Angular Music/Audio Player component for web applications. Easy and HIGHLY customisable.
-<<<<<<< HEAD
 [Stackblitz example](https://stackblitz.com/edit/angular-audio-player-demo?file=src/app/app.component.ts)
-=======
->>>>>>> c382d0de1eef23a193823b9f5b60daffae1f8c8a
 
 ![alt text](https://i.ibb.co/Y7c9HZR/music.jpg)
 
@@ -55,7 +52,6 @@ Add the following component tag in you template (no properties)
 audioList is an array of objects
 
 ```
-<<<<<<< HEAD
   audioList = [
     {
       url: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3",
@@ -73,22 +69,6 @@ audioList is an array of objects
       cover: "https://i1.sndcdn.com/artworks-000249294066-uow7s0-t500x500.jpg"
     }
   ];
-=======
-  audioList = [{
-    url: 'https://sample-videos.com/audio/mp3/crowd-cheering.mp3',
-    title: 'Sample Audio 1',
-    cover: 'https://i1.sndcdn.com/artworks-000249294066-uow7s0-t500x500.jpg'
-  }, {
-    url: 'https://sample-videos.com/audio/mp3/crowd-cheering.mp3',
-    title: 'Sample Audio 2',
-    cover: 'https://i1.sndcdn.com/artworks-000249294066-uow7s0-t500x500.jpg'
-  },
-  {
-    url: 'https://www2.cs.uic.edu/~i101/SoundFiles/StarWars60.wav',
-    title: 'Sample Audio 3',
-    cover: 'https://i1.sndcdn.com/artworks-000249294066-uow7s0-t500x500.jpg'
-  }]
->>>>>>> c382d0de1eef23a193823b9f5b60daffae1f8c8a
 ```
 
 ## Properties
