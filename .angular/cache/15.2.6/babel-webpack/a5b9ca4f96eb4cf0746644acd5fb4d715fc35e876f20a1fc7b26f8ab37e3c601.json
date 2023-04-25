@@ -1,0 +1,1 @@
+{"ast":null,"code":"/*\r\n * Public API Surface of ang-music-player\r\n */\nexport * from './lib/serives/ang-music-player.service';\nexport * from './lib/component/ang-music-player.component';\nexport * from './lib/ang-music-player.module';","map":null,"metadata":{},"sourceType":"module","externalDependencies":[]}
